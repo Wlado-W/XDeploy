@@ -15,8 +15,10 @@ class Server(models.Model):
 
     is_active = models.BooleanField(default=True)
     comment = models.TextField(blank=True, null=True)
-
     created_at = models.DateTimeField(auto_now_add=True)
+    updeted_at = models.DateTimeField(auto_now=True)
 
+    ssh_private_key = models.TextField(blank=True)
+    ssh_auth_type = models.CharField(max_length=20, choices=[("password", "Password"), ("key", "SSH Key"),], default="password",)
 def __str__(self):
     return f"{self.name} ({self.ip})"

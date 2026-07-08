@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Servers{% endblock %}
+
+{% block content %}
+
+<h2>Servers</h2>
+
+{% endblock %}
+
+<a href="/servers/create/" class="btn btn-primary mb-3"> + Add server</a>
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>IP</th>
+            <th>Country</th>
+            <th>SSH</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for server in servers %}
+        <tr>
+            <td>{{ server.name }}</td>
+            <td>{{ server.ip }}</td>
+            <td>{{ server.country }}</td>
+            <td>{{ server.ssh_port }}</td>
+
+            <td>
+               <a class="btn btn-warning btn-sm" href="/servers/edit/{{ server.id }}/">Edit server</a>
+               <a class="btn btn-danger btn-sm" href="/servers/delete/{{ server.id }}/">Delete server</a>
+               <a class="btn btn-info btn-sm" href="/checker/server/{{ server.id }}/">Ping server</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

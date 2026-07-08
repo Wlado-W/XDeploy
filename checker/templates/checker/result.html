@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Server check</h2>
+
+<p>
+    <b>{{ result.name }}</b>
+</p>
+<ul></ul>
+<li>Ping:</li>
+{% if result.ping %}

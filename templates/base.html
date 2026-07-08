@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}XDeploy{% endblock %}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            margin: 0;
+        }
+
+        .sidebar {
+            position: fixed;
+            width: 250px;
+            height: 100vh;
+            background: #1e293b;
+            padding: 20px;
+        }
+
+        .sidebar h3 {
+            color: #38bdf8;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            color: white;
+            display: block;
+            text-decoration: none;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+        }
+
+        .sidebar a:hover {
+            background: #334155;
+        }
+
+        .content {
+            margin-left: 270px;
+            padding: 25px;
+        }
+
+        .card-dark {
+            background: #1e293b;
+            border: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>XDeploy</h3>
+        <a href="/">Dashbord</a>
+        <a href="/">Servers</a>
+        <a href="/">Inbount</a>
+        <a href="/">Routins</a>
+        <a href="/">Cascade</a>
+        <a href="/">Warp</a>
+        <a href="/">Monitoring</a>
+        <a href="/">Django Admin</a>
+    </div>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
