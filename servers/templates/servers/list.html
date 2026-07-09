@@ -32,6 +32,7 @@
                <a class="btn btn-warning btn-sm" href="/servers/edit/{{ server.id }}/">Edit server</a>
                <a class="btn btn-danger btn-sm" href="/servers/delete/{{ server.id }}/">Delete server</a>
                <a class="btn btn-info btn-sm" href="/checker/server/{{ server.id }}/">Ping server</a>
+               <a class="btn btn-info btn-sm" href="{% url 'api_test_connection' server_id %}">API</a>
             </td>
         </tr>
         {% endfor %}

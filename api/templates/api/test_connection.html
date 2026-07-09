@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Проверка API</h2>
+
+<p><b>Сервер:</b>{{ server.name }}</p>
+{% if result.success %}
+<div class="alert alert-success">Подключеник успешное</div>
+
+<h4>Статус сервера</h4>
+<pre>{{ result.status }}</pre>
+
+<h4>Inbounds</h4>
+<pre>{{ result.inbounds }}</pre>
+
+{% else %}
+
+<div class="alert alert-danger">{{ result.message }}</div>
+
+{% endif %}
+{% endblock %}
+
