@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from servers.models Server
+from servers.models import Server
 from .client import XUIClient
 
-def test_connection(request, sever_id):
+def test_connection(request, server_id):
     server = get_object_or_404(Server, pk=server_id)
     client = XUIClient(server)
     result = {"success": False, "message":"", "status": None, "inbounds": None,}
