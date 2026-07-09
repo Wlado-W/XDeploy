@@ -7,6 +7,8 @@ class XUIClient:
 
     @property
     def base_url(self):
+        if not  self.server.api_url:
+            raise ValueError("API URL не указан для сервера")
         return self.server.api_url.rstrip("/")
     
     def login(self):

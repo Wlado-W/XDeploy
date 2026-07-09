@@ -15,4 +15,4 @@ def test_connection(request, server_id):
             result["message"] = "Не удалось авторизоваться в 3X-UI"
     except Exception as e:
         result["message"] = str(e)
-        return render(request, "api/test_connection.html", {"server": server, "result": result},)    
+    return render(request, "api/test_connection.html", {"server": server, "result": result},)    
